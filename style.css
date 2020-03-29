@@ -1,9 +1,30 @@
-body{
+body {
 	margin: 0;
 	padding: 0;
-	background-color: blue;
+	text-align: center;
+}
+
+#titleArea {
+	background-color: yellow;
 }
 
 h1 {
-	color: red;
+
+}
+
+#playingArea {
+	background-color: #8a8a5c;
+}
+
+.row {
+	border-width: 0px;
+	margin: 0px;
+}
+
+.column {
+	display: inline-block;
+	padding: 46px;
+	margin: 0px;
+	background-color: brown;
+	border-width: 0px;
 }
