@@ -1,12 +1,4 @@
-console.log('JS is working')
+let startButton = document.getElementById('startButton')
 
-const lighten = (e) => {
-	document.getElementById('test').style.visibility = 'hidden'
-}
-
-const darken = (e) => {
-	document.getElementById('test').style.visibility = 'visible'
-}
-
-document.getElementById('test').setEventListener('mouseenter', lighten)
-document.getElementById('test').setEventListener('mouseleave', darken)
+//Start button event listener calls setGame
+startButton.addEventListener('click', setGame) 

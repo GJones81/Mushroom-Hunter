@@ -14,6 +14,7 @@ h1 {
 
 #playingArea {
 	background-color: #8a8a5c;
+	z-index: 1;
 }
 
 .row {
