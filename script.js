@@ -1,5 +1,7 @@
 
+let ratNumber = -1
 let startButton = document.getElementById('startButton')
+let titleArea = document.getElementById('titleArea')
 
 //first part of flashlight effect
 const lighten = (e) => {
@@ -14,10 +16,11 @@ const darken = (e) => {
 }
 
 //adds event listeners to set up 'flashlight' effect
-const startFlashlight = (e) => {
+const startGame = (e) => {
 	for (let i = 0; i < squares.length; i++) {
 		squares[i].addEventListener('mouseenter', lighten)
 		squares[i].addEventListener('mouseleave', darken)
 	}
+	titleArea.style.display = 'none'
 }
-startButton.addEventListener('click', startFlashlight)
+startButton.addEventListener('click', startGame)
