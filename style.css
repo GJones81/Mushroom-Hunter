@@ -12,20 +12,57 @@ h1 {
 
 }
 
-#playingArea {
+#startButton {
+	font-size: 20px;
+}
+
+#sceneLayer {
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+	z-index: 0;
 	background-color: #8a8a5c;
+}
+
+#ratLayer {
+	width: 100vw;
+	visibility: none;
+	position: absolute;
 	z-index: 1;
+}
+
+#lightLayer {
+	width: 100vw;
+	position: absolute;
+	z-index: 2;
 }
 
 .row {
 	border-width: 0px;
 	margin: 0px;
+	border-width: 0px;
+	background-color: black;
+}
+
+.ratrow {
+	border-width: 0px;
+	margin: 0px;
+	border-width: 0px;
 }
 
 .column {
+	background-color: black;
 	display: inline-block;
 	padding: 46px;
 	margin: 0px;
-	background-color: brown;
 	border-width: 0px;
+	color: black;
+}
+
+.ratcolumn {
+	display: inline-block;
+	padding: 46px;
+	margin: 0px;
+	border-width: 0px;
+	color: black;
 }
