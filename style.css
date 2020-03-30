@@ -17,7 +17,7 @@ h1 {
 }
 
 #sceneLayer {
-	height: 110vh;
+	height: 100vh;
 	background-color: #8a8a5c;
 }
 
@@ -35,4 +35,5 @@ h1 {
 	margin: 0px;
 	border-width: 0px;
 	color: black;
+	border-radius: 30px;
 }
