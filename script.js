@@ -7,17 +7,16 @@ let healthPoints = 3
 
 let startButton = document.getElementById('startButton')
 let titleArea = document.getElementById('titleArea')
+let statusArea = document.getElementById('statusArea')
 
 //first part of flashlight effect
 const lighten = (e) => {
 	e.target.style.backgroundColor = 'yellow'
-	console.log(e.target)
 }
 
 //second part of flashligth effect
 const darken = (e) => {
 	e.target.style.backgroundColor = 'black'
-	console.log(e.target)
 }
 
 // function resets game
@@ -50,18 +49,30 @@ const darken = (e) => {
 	//remove event listeners for 'flashlight'
 	//adds mushroom image based on mushroomNumber
 
-//function to create rat, or rats
-	//randomizer
-	//checks if random number matches mushroomNumber or
-	//	other numbers already in the ratHorde array
-	//push new number into ratHorde
+//function to populate ratHorde array with random, unique numbers 0 to 83
+const countRatHorde = () => {
+	while(ratHorde.length > turnNumber - 1){
+		pup = Math.floor(Math.random() * 100)
+		if (pup < 84 && ratHorde.includes(pup) != true){
+			ratHorde.push(pup)
+		}
+		console.log(ratHorde)
+	}
+	createRats()
+}
+
 	
-//function to set rats
-	//based on numbers in ratHorde and .length
-		//add event listener to rat images
-		//remove event listeners for 'flashlight'
-		//add rat images based on random numbers popped off
-		//	the array
+//creates rats based on the ratHorde array, sets them with event listeners and image	
+const createRats = () => {
+	while(ratHorde.length >= 0){
+		rat = ratHorde.pop
+		//squares[rat].addEventListener('mouseenter', ratAttack)
+		//squares[rat].removeEventListener('mouseenter', lighten)
+		//squares[rat].removeEventListener('mouseleave', darken)
+		//squares[rat].style.backgroundImage= NEED RAT IMAGE
+	}
+	console.log(ratHorde)
+}
 
 //adds event listeners to set up 'flashlight' effect
 const setLevel = (e) => {
@@ -71,9 +82,11 @@ const setLevel = (e) => {
 	}
 	turnNumber++
 	titleArea.style.display = 'none'
+	statusArea.style.display = 'inline-block'
 	//call function to place mushroom
 
-	//call function to place rat, or rats
+	//call function to create and place rats
+	countRatHorde()
 }
 
-//startButton.addEventListener('click', setLevel)
+startButton.addEventListener('click', setLevel)

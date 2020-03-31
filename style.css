@@ -21,7 +21,11 @@ p {
 }
 
 #statusArea{
-	
+	display: none;
+}
+
+span {
+	display: inline-block;
 }
 
 #startButton {
