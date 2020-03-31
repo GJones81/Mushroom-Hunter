@@ -20,6 +20,10 @@ p {
 	font-size: 18px;
 }
 
+#statusArea{
+	
+}
+
 #startButton {
 	font-size: 20px;
 }
@@ -39,7 +43,7 @@ p {
 .column {
 	background-color: black;
 	display: inline-block;
-	padding: 46px;
+	padding: 55px;
 	margin: 0px;
 	border-width: 0px;
 	color: black;
