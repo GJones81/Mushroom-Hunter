@@ -33,7 +33,10 @@ const darken = (e) => {
 	// if so, calls resetGame
 
 //function for clicking mushroom
-	//increase score by one
+const claimMushroom = () =>{
+	score++
+	console.log(score) 
+}
 	//calls setLevel function for next level
 
 //function for mousing over rat
@@ -41,38 +44,56 @@ const darken = (e) => {
 	//check if healthPoints are at 0
 	//	calls endGame function if at 0
 
+//function to set background image to mushroom
+const findMushroom =(e) => {
+	squares[mushroomNumber].style.backgroundImage = "url('mushroom-icon-2-48.png')"
+	console.log('Mushroom Found!')
+}
 
-//function to set mushroom
-	//randomizer
-	//	sets mushroomNumber to number
-	//adds event listener to mushroom image
-	//remove event listeners for 'flashlight'
-	//adds mushroom image based on mushroomNumber
+
+//function to create a random number and set the mushroom with that number
+const setMushroom = (e) => {
+	mushroomNumber = Math.floor(Math.random() * 100)
+	console.log(mushroomNumber)
+	if (mushroomNumber < 84){
+		//add event listeners
+		squares[mushroomNumber].addEventListener('mouseenter', findMushroom)
+		squares[mushroomNumber].addEventListener('click', claimMushroom)
+	} 
+	else {
+		setMushroom()
+	}
+	
+
+	//countRatHorde()
+}
+	
+	
 
 //function to populate ratHorde array with random, unique numbers 0 to 83
-const countRatHorde = () => {
-	while(ratHorde.length > turnNumber - 1){
-		pup = Math.floor(Math.random() * 100)
-		if (pup < 84 && ratHorde.includes(pup) != true){
-			ratHorde.push(pup)
-		}
-		console.log(ratHorde)
-	}
-	createRats()
-}
+//const countRatHorde = () => {
+//	while(ratHorde.length > turnNumber - 1){
+//		let pup = Math.floor(Math.random() * 100)
+//		if (pup < 84 && ratHorde.includes(pup) != true && pup != mushroomNumber){
+//			ratHorde.push(pup)
+//		}
+//		console.log(ratHorde)
+//	}
+//	createRats()
+//}
 
 	
 //creates rats based on the ratHorde array, sets them with event listeners and image	
-const createRats = () => {
-	while(ratHorde.length >= 0){
-		rat = ratHorde.pop
+//const createRats = () => {
+//	while(ratHorde.length >= 0){
+//		rat = ratHorde.pop
 		//squares[rat].addEventListener('mouseenter', ratAttack)
 		//squares[rat].removeEventListener('mouseenter', lighten)
 		//squares[rat].removeEventListener('mouseleave', darken)
 		//squares[rat].style.backgroundImage= NEED RAT IMAGE
-	}
-	console.log(ratHorde)
-}
+//	}
+//	console.log(ratHorde)
+//}
 
 //adds event listeners to set up 'flashlight' effect
 const setLevel = (e) => {
@@ -84,9 +105,8 @@ const setLevel = (e) => {
 	titleArea.style.display = 'none'
 	statusArea.style.display = 'inline-block'
 	//call function to place mushroom
+	setMushroom()
 
-	//call function to create and place rats
-	countRatHorde()
-}
+}	
 
 startButton.addEventListener('click', setLevel)

@@ -32,6 +32,10 @@ span {
 	font-size: 20px;
 }
 
+#ratAttack {
+	display: none;
+}
+
 #sceneLayer {
 	height: 100vh;
 	background-color: #8a8a5c;
@@ -46,6 +50,7 @@ span {
 
 .column {
 	background-color: black;
+	background-size: 100% 16vh;
 	display: inline-block;
 	padding: 55px;
 	margin: 0px;
