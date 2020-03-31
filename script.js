@@ -3,12 +3,28 @@ let turnNumber = 0
 let mushroomNumber = 0
 let ratHorde = []
 let score = 0
-let healthPoints = 3
+let healthPoints = 10
+
+let titleArea = document.getElementById('titleArea')
 
 let startButton = document.getElementById('startButton')
-let titleArea = document.getElementById('titleArea')
+
+let defeatBanner = document.getElementById('defeatBanner')
+
+let playAgainButton = document.getElementById('playAgain')
+
 let statusArea = document.getElementById('statusArea')
-let attackBanner = document.getElementById('attackBanner')
+
+let healthBoard = document.getElementById('health')
+
+let scoreBoard = document.getElementById('score')
+
+let continueButton = document.getElementById('continueButton')
+
+let exitButton = document.getElementById('exitButton')
+
+let playArea = document.getElementById('playArea')
+
 
 //first part of flashlight effect
 const lighten = (e) => {
@@ -18,6 +34,7 @@ const lighten = (e) => {
 //second part of flashligth effect
 const darken = (e) => {
 	e.target.style.backgroundColor = 'black'
+	e.target.style.backgroundImage = 'none'
 }
 
 // function resets game
@@ -28,28 +45,34 @@ const darken = (e) => {
 
 
 //function for ending game
+const endGame = () => {
+	playArea.style.display = 'none'
+	statusArea.style.display = 'none'
+	defeatBanner.style.display = 'inline-block'
+}
 	//append score to high score table
 	//display high score table
 	//ask if player wants to play again
 	// if so, calls resetGame
 
-//function for clicking mushroom
+//function for clicking on a mushroom
 const claimMushroom = () =>{
+	playArea.style.display = 'none'
 	score++
-	console.log('Your score is ' + score)
-	endLevel()
+	scoreBoard.textContent = `Your score is ${score}`
+	healthBoard.textContent = `Your health is at ${healthPoints}`
+	continueButton.addEventListener('click', endLevel)
 }
 //function for mousing over rat
 const ratAttack = (e) => {
 	console.log('ATTACK!')
 	e.target.style.backgroundImage = "url('pngkey.com-animal-face-png-3882222.png')"
-	attackBanner.style.display = 'inline-block'
 	healthPoints--
 	console.log(healthPoints)
-	//endLevel()
+	if (healthPoints == 0){
+		endGame()
+	}
 }
-	//check if healthPoints are at 0
-	//	calls endGame function if at 0
 
 //function to set background image to mushroom
 const findMushroom =(e) => {
@@ -69,7 +92,7 @@ const setMushroom = (e) => {
 	else {
 		setMushroom()
 	}
-
+//calls function to begin populating the rat horde
 	countRatHorde()
 }
 	
@@ -86,19 +109,18 @@ const countRatHorde = () => {
 	}
 }
 	
-//creates rats based on the ratHorde array, sets them with event listeners and image	
+//creates rats based on the ratHorde array, sets them with event listeners	
 const createRats = () => {
 		while(ratHorde.length > 0){
 			rat = ratHorde.pop()
 			console.log('rat equals ' + rat)
-			squares[rat].addEventListener('mouseenter', ratAttack)
 			squares[rat].removeEventListener('mouseenter', lighten)
-			squares[rat].removeEventListener('mouseleave', darken)
+			//ratAttack is the function which shows the rat image and decrements healthPoints
+			squares[rat].addEventListener('mouseenter', ratAttack)
 		}
-	console.log(ratHorde)
 }
 
-//adds event listeners to set up 'flashlight' effect
+//Adds event listeners to set up 'flashlight' effect
 const setLevel = (e) => {
 	for (let i = 0; i < squares.length; i++) {
 		squares[i].addEventListener('mouseenter', lighten)
@@ -115,6 +137,8 @@ const setLevel = (e) => {
 
 //removes all event listeners to conclude the level before starting the next
 const endLevel = () => {
+	playArea.style.display = 'inline-block'
+	continueButton.removeEventListener('click', endLevel)
 	console.log('wrapping up the level')
 	squares[mushroomNumber].style.backgroundImage = 'none'
 	squares[mushroomNumber].style.backgroundColor = 'black'
