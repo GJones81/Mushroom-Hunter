@@ -32,8 +32,9 @@ span {
 	font-size: 20px;
 }
 
-#ratAttack {
+#attackBanner {
 	display: none;
+	font-size: 50px;
 }
 
 #sceneLayer {
@@ -57,4 +58,8 @@ span {
 	border-width: 0px;
 	color: black;
 	border-radius: 30px;
+}
+
+footer {
+	background-color: yellow;
 }
