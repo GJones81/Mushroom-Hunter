@@ -37,6 +37,10 @@ const darken = (e) => {
 	e.target.style.backgroundImage = 'none'
 }
 
+const getRandomInt = (max) => {
+	return Math.floor(Math.random() * Math.floor(max))
+}
+
 // function resets game
 	//sets score to 0
 	//sets health points to 3
@@ -82,16 +86,17 @@ const findMushroom =(e) => {
 
 //function to create a random number and set the mushroom with that number
 const setMushroom = (e) => {
-	mushroomNumber = Math.floor(Math.random() * 100)
+	//mushroomNumber = Math.floor(Math.random() * 100)
+	mushroomNumber = getRandomInt(84)
 	console.log('the mushroom number equals ' + mushroomNumber)
 	if (mushroomNumber < 84){
 		//add event listeners
 		squares[mushroomNumber].addEventListener('mouseenter', findMushroom)
 		squares[mushroomNumber].addEventListener('click', claimMushroom)
 	} 
-	else {
-		setMushroom()
-	}
+	//else {
+	//	setMushroom()
+	//}
 //calls function to begin populating the rat horde
 	countRatHorde()
 }
@@ -100,7 +105,8 @@ const setMushroom = (e) => {
 const countRatHorde = () => {
 	if (turnNumber > 1){
 		while (ratHorde.length < turnNumber - 1 ){
-			let pup = Math.floor(Math.random() * 100)
+			let pup = getRandomInt(84)
+			//let pup = Math.floor(Math.random() * 100)
 			if (pup < 84 && ratHorde.includes(pup) != true && pup != mushroomNumber){
 				ratHorde.push(pup)
 			}

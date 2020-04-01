@@ -5,7 +5,7 @@ body {
 }
 
 #titleArea {
-	background-color: yellow;
+	background-color: #8a8a5c;
 }
 
 h1 {
@@ -20,15 +20,6 @@ p {
 	font-size: 18px;
 }
 
-#statusArea{
-	display: none;
-	margin: 0;
-	padding: 0;
-	height: 25px;
-	font-size: 20px;
-	background-color: #8a8a5c
-}
-
 #startButton {
 	font-size: 20px;
 }
@@ -40,9 +31,36 @@ p {
 	background-color: crimson;
 }
 
+#statusArea{
+	display: inline;
+	margin: 0;
+	padding: 0;
+	height: 25px;
+	font-size: 20px;
+	background-color: #8a8a5c
+}
+
+#health {
+	background-color: #8a8a5c
+	font-size: 16px;
+}
+
+#score {
+	background-color: #8a8a5c
+	font-size: 16px;
+}
+
+#continueButton {
+
+}
+
 #playArea {
 	height: 100vh;
 	background-color: #8a8a5c;
+}
+
+#exitButton {
+
 }
 
 .row {
