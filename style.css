@@ -1,10 +1,13 @@
 body {
-	margin: 0;
+	background-color: #8a8a5c;
+	margin: 10;
 	padding: 0;
+	border: 0;
 	text-align: center;
 }
 
 #titleArea {
+	display: none;
 	background-color: #8a8a5c;
 }
 
@@ -21,46 +24,92 @@ p {
 }
 
 #startButton {
+	background-color: #b8b894;
+	border-radius: 10px;
 	font-size: 20px;
 }
 
 #defeatBanner {
-	display: none;
-	height: 100vh;
-	font-size: 50px;
+	/*display: none;*/
+	height: 80vh;
+	font-size: 30px;
 	background-color: crimson;
 }
 
-#statusArea{
-	display: inline;
-	margin: 0;
-	padding: 0;
-	height: 25px;
+#playAgain {
 	font-size: 20px;
-	background-color: #8a8a5c
+}
+
+#statusArea{
+	display: none;
+	width: 100%;
+	margin: 10;
+	padding: 10;
+	height: 100px;
+	font-size: 20px;
+	background-color: #8a8a5c;
 }
 
 #health {
-	background-color: #8a8a5c
-	font-size: 16px;
+	background-color: #8a8a5c;
+	font-size: 20px;
+	padding: 10px;
 }
 
 #score {
-	background-color: #8a8a5c
-	font-size: 16px;
+	background-color: #8a8a5c;
+	font-size: 20px;
+	padding: 10px;
+}
+
+#contButtonArea {
+	/*display: none;*/
+}
+
+table {
+	text-align: center;
+}
+
+tr {
+	display: inline-block;
+	padding: 10px;
+	margin: 10px;
+}
+
+th {
+	padding: 20px;
+	margin: 20px;
+	border-width: 5px;
+}
+
+#tableBody {
+	text-align: center;
 }
 
 #continueButton {
+	display: none;
+	background-color: #b8b894;
+	border-radius: 10px;
+	font-size: 20px;
 
 }
 
+
 #playArea {
+	display: none;
 	height: 100vh;
 	background-color: #8a8a5c;
 }
 
-#exitButton {
+#exitButtonArea {
+	display: none;
 
+}
+
+#exitButton {
+	background-color: #b8b894;
+	border-radius: 10px;
+	font-size: 20px;
 }
 
 .row {
