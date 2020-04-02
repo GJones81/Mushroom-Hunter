@@ -1,115 +1,130 @@
 body {
 	background-color: #8a8a5c;
-	margin: 10;
+	margin: 0;
 	padding: 0;
 	border: 0;
 	text-align: center;
 }
 
 #titleArea {
-	display: none;
 	background-color: #8a8a5c;
 }
 
 h1 {
+	font-size: 56px;
+	padding: 50px 0px 0px 0px;
 	text-decoration: underline;
 }
 
+#subTitle {
+	padding: 0px 0px 30px 0px;
+}
+
 h2 {
+	font-size: 28px;
+	padding: 10px;
 	text-decoration: underline;
 }
 
 p {
-	font-size: 18px;
+	font-size: 20px;
+	padding: 10px;
+
+}
+
+.button {
+	font-size: 20px;
+	border-radius: 15px;
+	background-color: #c2c2a3;
+	border-color: #3d3d29;
+	border-width: 5px;
+}
+
+.stats {
+	display: inline-block;
+	background-color: #8a8a5c;
+	padding: 50px 100px 50px 100px;
 }
 
 #startButton {
-	background-color: #b8b894;
-	border-radius: 10px;
-	font-size: 20px;
+	
 }
 
-#defeatBanner {
+#finishArea {
 	/*display: none;*/
-	height: 80vh;
-	font-size: 30px;
+	height: 100vh;
 	background-color: crimson;
 }
 
-#playAgain {
-	font-size: 20px;
+#recordsTitle {
+	padding: 20px 0px 0px 0px;
+	margin: 20px 0px 0px 0px;	
+}
+
+#playAgainButton {
+	
 }
 
 #statusArea{
-	display: none;
+	/*display: none;*/
 	width: 100%;
-	margin: 10;
-	padding: 10;
 	height: 100px;
-	font-size: 20px;
 	background-color: #8a8a5c;
 }
 
 #health {
-	background-color: #8a8a5c;
-	font-size: 20px;
-	padding: 10px;
+
 }
 
 #score {
-	background-color: #8a8a5c;
-	font-size: 20px;
-	padding: 10px;
+	
 }
 
 #contButtonArea {
 	/*display: none;*/
 }
 
-table {
-	text-align: center;
+#continueButton {
+	
 }
 
-tr {
+table {
+	border: 1px solid black;
 	display: inline-block;
-	padding: 10px;
-	margin: 10px;
 }
 
 th {
-	padding: 20px;
-	margin: 20px;
-	border-width: 5px;
+	text-decoration: underline;
+	padding: 10px;
+	background-color: white;
+	border: 1px solid black;
+}
+
+td {
+	padding: 10px;
+	background-color: white;
+	border: 1px solid black;
 }
 
 #tableBody {
 	text-align: center;
 }
 
-#continueButton {
-	display: none;
-	background-color: #b8b894;
-	border-radius: 10px;
-	font-size: 20px;
 
-}
 
 
 #playArea {
-	display: none;
 	height: 100vh;
 	background-color: #8a8a5c;
 }
 
 #exitButtonArea {
-	display: none;
+	/*display: none;*/
 
 }
 
 #exitButton {
-	background-color: #b8b894;
-	border-radius: 10px;
-	font-size: 20px;
+
 }
 
 .row {

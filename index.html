@@ -7,15 +7,18 @@
 <body>
 	<div id="titleArea">
 		<h1>Mushroom Hunter</h1>
-		<h2>Find the magic mushrooms, but beware...</h2>
-		<p>Welcome to the Magic Mushroom Mine. The 'shrooms which grow inside are special.<br> Be careful though, the rats are surly and hate bright lights</br></p>
-		<button id="startButton">Click here to get your flashlight<br>and enter the mine</button>
+			<h2 id="subTitle">Find the magic mushrooms, but beware...</h2>
+				<p>Welcome to the Magic Mushroom Mine. The 'shrooms which grow inside are special.
+				<br> Be careful though, the rats are surly and hate bright lights</br></p>
+		<button id="startButton" class="button">Click here to get your flashlight<br>and enter the mine</button>
 	</div>
-		<div id="defeatBanner">
-		<h1>YOU HAVE BEEN WHUPPED BY A RODENT!!</h1>
-		<button id="playAgain">Do you want to play again?</button>
+		<div id="finishArea">
+			<h1>You have been run off by a rodent!!</h1>
+		<div>
+			<button id="playAgainButton" class="button">Do you want to play again?</button>
+		</div>
 		<div id="highScoreTable">
-			<h2>Previous High Scores</h2>
+			<h2 id="recordsTitle">Previous High Scores</h2>
 				<table id="table">
 					<thead>
 						<tr>
@@ -28,15 +31,15 @@
 		</div>
 		</div>
 		<div id="statusArea">
-			<p id="health">Health</p>
-			<p id="score">Score</p>
+			<p id="health" class="stats">Health:  </p>
+			<p id="score" class="stats">Score:  </p>
 		</div>
 		<div id="contButtonArea">
-			<button id="continueButton">Do you want to continue?</button>
+			<button id="continueButton" class="button">Do you want to continue?</button>
 		</div>
 		<div id="playArea">
 			<div id="exitButtonArea">
-				<button id="exitButton">Are you scared? Click here to leave</button>
+				<button id="exitButton" class="button">Are you scared? Click here to leave</button>
 			</div>
 			<div class="row">
 				<div class="column" id="0">00</div>

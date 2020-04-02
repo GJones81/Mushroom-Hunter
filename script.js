@@ -11,9 +11,9 @@ let titleArea = document.getElementById('titleArea')
 
 let startButton = document.getElementById('startButton')
 
-let defeatBanner = document.getElementById('defeatBanner')
+let finishArea = document.getElementById('finishArea')
 
-let playAgainButton = document.getElementById('playAgain')
+let playAgainButton = document.getElementById('playAgainButton')
 
 let highScoreTable = document.getElementById('highScoreTable')
 
@@ -106,7 +106,7 @@ const endGame = () => {
 	//hides the status area
 	statusArea.style.display = 'none'
 	//shows the defeat announcement and highscore table
-	defeatBanner.style.display = 'inline-block'
+	finishArea.style.display = 'inline-block'
 	//ask player to record initials
 	let initials = prompt("Nice huntin'. Write your initials here")
 	//add up the score
@@ -125,7 +125,7 @@ const ratAttack = (e) => {
 	e.target.style.backgroundImage = "url('pngkey.com-animal-face-png-3882222.png')"
 	//subtracts health points and updates the health points displayed
 	healthPoints--
-	healthBoard.textContent = `Your health is at ${healthPoints}`
+	healthBoard.textContent = `Health: ${healthPoints}`
 	console.log(healthPoints)
 	//calls endGame function when health points fall to zero
 	if (healthPoints == 0){
@@ -142,7 +142,7 @@ const claimMushroom = () =>{
 	//shows the continue button
 	contButtonArea.style.display = 'inline-block'
 	//updates the score displayed
-	scoreBoard.textContent = `Your score is ${score}`
+	scoreBoard.textContent = `Score: ${score}`
 	//add a click to the endLevel function
 	continueButton.addEventListener('click', endLevel)
 }
@@ -218,8 +218,8 @@ const setLevel = (e) => {
 	}
 	//increases turn number
 	turnNumber++
-	healthBoard.textContent = `Your health is at ${healthPoints}`
-	scoreBoard.textContent = `Your score is ${score}`
+	healthBoard.textContent = `Health: ${healthPoints}`
+	scoreBoard.textContent = `Score: ${score}`
 	console.log('It is turn number ' + turnNumber)
 	//hides the title area for playing
 	titleArea.style.display = 'none'
