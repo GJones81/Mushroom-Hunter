@@ -8,8 +8,13 @@ body {
 }
 
 #titleArea {
-	/*background-color: #8a8a5c;*/
 	background-image: url('pawel-czerwinski-2tLNNp1vGhU-unsplash (1).jpg');
+}
+
+#title {
+	display: inline-block;
+	width: 500px;
+	background-color: rgba(138, 138, 138, 0.5);
 }
 
 h1 {
@@ -19,6 +24,8 @@ h1 {
 }
 
 #subTitle {
+	background-color: rgba(138, 138, 138, 0.5);
+	width: 500px;
 	padding: 0px 0px 30px 0px;
 }
 
@@ -26,6 +33,11 @@ h2 {
 	font-size: 28px;
 	padding: 10px;
 	text-decoration: underline;
+}
+
+#directions {
+	background-color: rgba(138, 138, 144, 0.5);
+
 }
 
 p {
@@ -44,7 +56,6 @@ p {
 
 .stats {
 	display: inline-block;
-	/*background-color: #8a8a5c;*/
 	padding: 50px 100px 50px 100px;
 }
 
@@ -53,14 +64,13 @@ p {
 }
 
 #finishArea {
-	display: none;
+	/*display: none;*/
 	height: 100vh;
-	background-color: #8a8a5c;
 }
 
 #recordsTitle {
 	padding: 20px 0px 0px 0px;
-	margin: 20px 0px 0px 0px;	
+	margin: 20px 0px 0px 0px
 }
 
 #playAgainButton {
@@ -68,10 +78,9 @@ p {
 }
 
 #statusArea{
-	display: none;
+	/*display: none;*/
 	width: 100%;
 	height: 100px;
-	/*background-color: #8a8a5c;*/
 	background-image: url('pawel-czerwinski-2tLNNp1vGhU-unsplash (1).jpg');
 }
 
@@ -84,7 +93,7 @@ p {
 }
 
 #contButtonArea {
-	display: none;
+	/*display: none;*/
 }
 
 #continueButton {
@@ -119,7 +128,7 @@ td {
 }
 
 #exitButtonArea {
-	display: none;
+	/*display: none;*/
 
 }
 
@@ -147,6 +156,7 @@ td {
 
 #footer {
 	padding: 10px;
-	color: grey;
+	font-size: 16px;
+	color: black;
 }
 

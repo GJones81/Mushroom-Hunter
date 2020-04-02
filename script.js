@@ -1,6 +1,6 @@
 //Globals
 const LS_NAME = 'highScores'
-const SCORE_SLOTS = 5
+const SCORE_SLOTS = 10
 let turnNumber = 0
 let mushroomNumber = 0
 let ratHorde = []
@@ -41,8 +41,7 @@ let ratGrowl = document.getElementById('ratGrowl')
 
 let mushroomSound = document.getElementById('mushroomSound')
 
-//let caveSounds = document.getElementById('caveSounds')
-
+let caveSounds = document.getElementById('caveSounds')
 
 document.addEventListener('DOMContentLoaded', () => {
 	//sets a click on the start button
@@ -126,6 +125,7 @@ const ratAttack = (e) => {
 	console.log('ATTACK!')
 	//set the image of the rat
 	e.target.style.backgroundImage = "url('pngkey.com-animal-face-png-3882222.png')"
+	//e.target.style.backgroundImage = "url('clipart-3-2-15-10-14.png')"
 	ratGrowl.play()
 	//subtracts health points and updates the health points displayed
 	healthPoints--
@@ -143,6 +143,8 @@ const claimMushroom = () =>{
 	score++
 	//plays the mushroom sound when you click on the mushroom
 	mushroomSound.play()
+	//pauses the cave sounds
+	caveSounds.pause()
 	//hides the playing area
 	playArea.style.display = 'none'
 	//shows the continue button
@@ -234,6 +236,7 @@ const setLevel = (e) => {
 	//shows the exit button
 	exitButtonArea.style.display = 'inline-block'
 	//plays cave sounds
+	caveSounds.play()
 	caveSounds.loop = true
 	//call function to place mushroom
 	setMushroom()
