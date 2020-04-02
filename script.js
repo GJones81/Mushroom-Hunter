@@ -37,6 +37,12 @@ let playArea = document.getElementById('playArea')
 
 let transitionArea = document.getElementById('transitionArea')
 
+let ratGrowl = document.getElementById('ratGrowl')
+
+let mushroomSound = document.getElementById('mushroomSound')
+
+//let caveSounds = document.getElementById('caveSounds')
+
 
 document.addEventListener('DOMContentLoaded', () => {
 	//sets a click on the start button
@@ -113,9 +119,6 @@ const endGame = () => {
 	tallyHighScore(initials)
 	//update high score
 	updateScore()
-		
-	//ask if player wants to play again
-	// if so, calls resetGame
 }
 
 //function for mousing over rat
@@ -123,6 +126,7 @@ const ratAttack = (e) => {
 	console.log('ATTACK!')
 	//set the image of the rat
 	e.target.style.backgroundImage = "url('pngkey.com-animal-face-png-3882222.png')"
+	ratGrowl.play()
 	//subtracts health points and updates the health points displayed
 	healthPoints--
 	healthBoard.textContent = `Health: ${healthPoints}`
@@ -137,6 +141,8 @@ const ratAttack = (e) => {
 const claimMushroom = () =>{
 	//increases score
 	score++
+	//plays the mushroom sound when you click on the mushroom
+	mushroomSound.play()
 	//hides the playing area
 	playArea.style.display = 'none'
 	//shows the continue button
@@ -151,7 +157,6 @@ const claimMushroom = () =>{
 const findMushroom =(e) => {
 	//set the image of a mushroom
 	squares[mushroomNumber].style.backgroundImage = "url('mushroom-icon-2-48.png')"
-	//play a short audio clip?
 }
 
 //randomizer function
@@ -192,8 +197,7 @@ const createRats = () => {
 			rat = ratHorde.pop()
 			console.log('rat at ' + rat)
 			squares[rat].removeEventListener('mouseenter', lighten)
-			//ratAttack is the function which shows the rat image and 
-			//decrements healthPoints
+			//ratAttack is the function which shows the rat image and decrements healthPoints
 			squares[rat].addEventListener('mouseenter', ratAttack)
 			console.log(ratHorde)
 		}
@@ -229,6 +233,8 @@ const setLevel = (e) => {
 	contButtonArea.style.display = 'none'
 	//shows the exit button
 	exitButtonArea.style.display = 'inline-block'
+	//plays cave sounds
+	caveSounds.loop = true
 	//call function to place mushroom
 	setMushroom()
 
