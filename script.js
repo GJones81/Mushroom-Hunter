@@ -6,7 +6,7 @@ let mushroomNumber = 0
 let ratHorde = []
 let score = 0
 let healthPoints = 10
-let delay = 900
+let delay = 800
 
 let titleArea = document.getElementById('titleArea')
 
