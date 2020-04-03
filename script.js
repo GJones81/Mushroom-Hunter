@@ -6,7 +6,7 @@ let mushroomNumber = 0
 let ratHorde = []
 let score = 0
 let healthPoints = 10
-let delay = 1000
+let delay = 900
 
 let titleArea = document.getElementById('titleArea')
 
@@ -125,12 +125,10 @@ const endGame = () => {
 
 //function for delaying a rat attack
 const ratAttack = () => {
-	console.log('ATTACK!')
 	ratGrowl.play()
 	//subtracts health point and updates health points displayed
 	healthPoints--
 	healthBoard.textContent = `Health: ${healthPoints}`
-	console.log(healthPoints)
 	//calls endGame function when health points fall to zero
 	if (healthPoints == 0){
 		endGame()
@@ -141,19 +139,39 @@ const ratAttack = () => {
 
 //function for mousing over rat
 const findRat = (e) => {
-
+	console.log(e.target)
+	//function to remove the delay on the ratAttack function
 	const ratRunAway = () => {
 		clearTimeout(pause)
 	}
 	//set the image of the rat
-	e.target.style.backgroundImage = "url('kgSnEU6.jpg')"
+	let pictureNumber = parseInt(e.target.id)
+	console.log(pictureNumber)
+
+		if (pictureNumber % 7 === 0) {
+			e.target.style.backgroundImage = "url('Oppossum1.jpg')"
+		}
+		else if (pictureNumber % 5 === 0) {
+			e.target.style.backgroundImage = "url('Oppossum2.jpeg')"
+		}
+		else if (pictureNumber % 4 === 0) {
+			e.target.style.backgroundImage = "url('Oppossum3.jpeg')"
+		}
+		else if (pictureNumber % 3 === 0) {
+			e.target.style.backgroundImage = "url('Oppossum4.jpg')"
+		}
+		else {
+			e.target.style.backgroundImage = "url('Oppossum5.jpg')"
+		}	
+
+	//e.target.style.backgroundImage = "url('Oppossum1.jpg')"
 	//set a timer Id equal to the variable pause
 	let pause = setTimeout(ratAttack, delay)
 	//sets event listener to stop the calling of ratAttack if the player moves the cursor 
 	//off the rat
 	e.target.addEventListener('mouseleave', ratRunAway)
-	
 }
+	
 
 //function for clicking on a mushroom
 const claimMushroom = () =>{
@@ -204,7 +222,6 @@ const countRatHorde = () => {
 			let pup = getRandomInt(84)
 			if (ratHorde.includes(pup) != true && pup != mushroomNumber){
 				ratHorde.push(pup)
-				console.log(ratHorde)
 			}
 		}
 		//calls the function which uses ratHorde array to assign event listeners
@@ -220,8 +237,11 @@ const createRats = () => {
 			squares[rat].removeEventListener('mouseenter', lighten)
 			//ratAttack is the function which shows the rat image and decrements healthPoints
 			squares[rat].addEventListener('mouseenter', findRat)
-			console.log(ratHorde)
 		}
+		if (delay > 300) {
+			delay = delay - 50
+		}
+		console.log(delay)
 }
 
 //first part of flashlight effect
