@@ -120,12 +120,18 @@ const endGame = () => {
 	updateScore()
 }
 
+
+
+//function for delaying a rat attack
+//const ratAttack 
+
+
 //function for mousing over rat
-const ratAttack = (e) => {
+const findRat = (e) => {
 	console.log('ATTACK!')
 	//set the image of the rat
-	e.target.style.backgroundImage = "url('pngkey.com-animal-face-png-3882222.png')"
-	//e.target.style.backgroundImage = "url('clipart-3-2-15-10-14.png')"
+	//e.target.style.backgroundImage = "url('pngkey.com-animal-face-png-3882222.png')"
+	e.target.style.backgroundImage = "url('kgSnEU6.jpg')"
 	ratGrowl.play()
 	//subtracts health points and updates the health points displayed
 	healthPoints--
@@ -135,6 +141,8 @@ const ratAttack = (e) => {
 	if (healthPoints == 0){
 		endGame()
 	}
+
+
 }
 
 //function for clicking on a mushroom
@@ -200,7 +208,7 @@ const createRats = () => {
 			console.log('rat at ' + rat)
 			squares[rat].removeEventListener('mouseenter', lighten)
 			//ratAttack is the function which shows the rat image and decrements healthPoints
-			squares[rat].addEventListener('mouseenter', ratAttack)
+			squares[rat].addEventListener('mouseenter', findRat)
 			console.log(ratHorde)
 		}
 }
@@ -259,7 +267,7 @@ const endLevel = () => {
 		squares[i].removeEventListener('mouseleave', darken)
 		squares[i].removeEventListener('mouseenter', findMushroom)
 		squares[i].removeEventListener('click', claimMushroom)
-		squares[i].removeEventListener('mouseenter', ratAttack)
+		squares[i].removeEventListener('mouseenter', findRat)
 		squares[i].style.backgroundImage = 'none'
 	}
 	//resets these global variables for the next level to begin
