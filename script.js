@@ -44,19 +44,6 @@ let mushroomSound = document.getElementById('mushroomSound')
 
 let caveSounds = document.getElementById('caveSounds')
 
-document.addEventListener('DOMContentLoaded', () => {
-	//sets a click on the start button
-	startButton.addEventListener('click', setLevel)
-})
-
-const resetGame = () => {
-	score = 0
-	healthPoints = 10
-	turnNumber = 0 
-	defeatBanner.style.display = 'none'
-	endLevel()
-}
-
 const retrieveHighScore = () => {
 	//goes into local storage and retrieves scores in string type format
 	let scoreString = localStorage.getItem(LS_NAME)
@@ -104,6 +91,13 @@ const updateScore = () => {
 	}
 }
 
+const resetGame = () => {
+	score = 0
+	healthPoints = 10
+	turnNumber = 0 
+	defeatBanner.style.display = 'none'
+	endLevel()
+}
 
 //function for ending game
 const endGame = () => {
@@ -121,8 +115,6 @@ const endGame = () => {
 	updateScore()
 }
 
-
-
 //function for delaying a rat attack
 const ratAttack = () => {
 	ratGrowl.play()
@@ -134,8 +126,6 @@ const ratAttack = () => {
 		endGame()
 	}
 }
-
-
 
 //function for mousing over rat
 const findRat = (e) => {
@@ -235,10 +225,9 @@ const createRats = () => {
 			rat = ratHorde.pop()
 			console.log('rat at ' + rat)
 			squares[rat].removeEventListener('mouseenter', lighten)
-			//ratAttack is the function which shows the rat image and decrements healthPoints
 			squares[rat].addEventListener('mouseenter', findRat)
 		}
-		if (delay > 300) {
+		if (delay > 200) {
 			delay = delay - 50
 		}
 		console.log(delay)
@@ -277,7 +266,7 @@ const setLevel = (e) => {
 	//plays cave sounds
 	caveSounds.play()
 	caveSounds.loop = true
-	//call function to place mushroom
+	//call function to place the mushroom
 	setMushroom()
 
 }	
@@ -311,3 +300,7 @@ const endLevel = () => {
 playAgainButton.addEventListener('click', resetGame)
 //sets a click on the exit button
 exitButton.addEventListener('click', endGame)
+//sets a click on the start button
+document.addEventListener('DOMContentLoaded', () => {
+	startButton.addEventListener('click', setLevel)
+})
