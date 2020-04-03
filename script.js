@@ -139,19 +139,19 @@ const findRat = (e) => {
 	console.log(pictureNumber)
 
 		if (pictureNumber % 7 === 0) {
-			e.target.style.backgroundImage = "url('Oppossum1.jpg')"
+			e.target.style.backgroundImage = "url('images/Oppossum1.jpg')"
 		}
 		else if (pictureNumber % 5 === 0) {
-			e.target.style.backgroundImage = "url('Oppossum2.jpeg')"
+			e.target.style.backgroundImage = "url('images/Oppossum2.jpeg')"
 		}
 		else if (pictureNumber % 4 === 0) {
-			e.target.style.backgroundImage = "url('Oppossum3.jpeg')"
+			e.target.style.backgroundImage = "url('images/Oppossum3.jpeg')"
 		}
 		else if (pictureNumber % 3 === 0) {
-			e.target.style.backgroundImage = "url('Oppossum4.jpg')"
+			e.target.style.backgroundImage = "url('images/Oppossum4.jpg')"
 		}
 		else {
-			e.target.style.backgroundImage = "url('Oppossum5.jpg')"
+			e.target.style.backgroundImage = "url('images/Oppossum5.jpg')"
 		}	
 
 	//e.target.style.backgroundImage = "url('Oppossum1.jpg')"
@@ -184,7 +184,7 @@ const claimMushroom = () =>{
 //function to set background image to mushroom
 const findMushroom =(e) => {
 	//set the image of a mushroom
-	squares[mushroomNumber].style.backgroundImage = "url('mushroom-icon-2-48.png')"
+	squares[mushroomNumber].style.backgroundImage = "url('images/mushroom-icon-2-48.png')"
 }
 
 //randomizer function

@@ -1,5 +1,5 @@
 body {
-	background-image: url('pawel-czerwinski-2tLNNp1vGhU-unsplash (1).jpg');
+	background-image: url('images/pawel-czerwinski-2tLNNp1vGhU-unsplash (1).jpg');
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -7,7 +7,7 @@ body {
 }
 
 #titleArea {
-	background-image: url('pawel-czerwinski-2tLNNp1vGhU-unsplash (1).jpg');
+	background-image: url('images/pawel-czerwinski-2tLNNp1vGhU-unsplash (1).jpg');
 }
 
 #title {
@@ -86,7 +86,7 @@ p {
 	display: none;
 	width: 100%;
 	height: 100px;
-	background-image: url('pawel-czerwinski-2tLNNp1vGhU-unsplash (1).jpg');
+	background-image: url('images/pawel-czerwinski-2tLNNp1vGhU-unsplash (1).jpg');
 }
 
 #health {
