@@ -42,4 +42,6 @@
 
 	My classmates for their support and assistance
 
-	Images requiring credit are noted by links on the game page
+	Images and sounds requiring credit are noted by links on the game page
+	Cave ambience courtesy of zapsplat.com
+	Wooden boards background images courtesy of Pawel Czerwinski on unsplash.com
