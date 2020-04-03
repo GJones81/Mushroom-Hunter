@@ -6,6 +6,7 @@ let mushroomNumber = 0
 let ratHorde = []
 let score = 0
 let healthPoints = 10
+let delay = 600
 
 let titleArea = document.getElementById('titleArea')
 
@@ -123,17 +124,10 @@ const endGame = () => {
 
 
 //function for delaying a rat attack
-//const ratAttack 
-
-
-//function for mousing over rat
-const findRat = (e) => {
+const ratAttack = () => {
 	console.log('ATTACK!')
-	//set the image of the rat
-	//e.target.style.backgroundImage = "url('pngkey.com-animal-face-png-3882222.png')"
-	e.target.style.backgroundImage = "url('kgSnEU6.jpg')"
 	ratGrowl.play()
-	//subtracts health points and updates the health points displayed
+	//subtracts health point and updates health points displayed
 	healthPoints--
 	healthBoard.textContent = `Health: ${healthPoints}`
 	console.log(healthPoints)
@@ -141,8 +135,24 @@ const findRat = (e) => {
 	if (healthPoints == 0){
 		endGame()
 	}
+}
 
 
+
+//function for mousing over rat
+const findRat = (e) => {
+
+	const ratRunAway = () => {
+		clearTimeout(pause)
+	}
+	//set the image of the rat
+	e.target.style.backgroundImage = "url('kgSnEU6.jpg')"
+	//set a timer Id equal to the variable pause
+	let pause = setTimeout(ratAttack, delay)
+	//sets event listener to stop the calling of ratAttack if the player moves the cursor 
+	//off the rat
+	e.target.addEventListener('mouseleave', ratRunAway)
+	
 }
 
 //function for clicking on a mushroom
@@ -197,6 +207,7 @@ const countRatHorde = () => {
 				console.log(ratHorde)
 			}
 		}
+		//calls the function which uses ratHorde array to assign event listeners
 		createRats()
 	}
 }
@@ -244,8 +255,8 @@ const setLevel = (e) => {
 	//shows the exit button
 	exitButtonArea.style.display = 'inline-block'
 	//plays cave sounds
-	caveSounds.play()
-	caveSounds.loop = true
+	//caveSounds.play()
+	//caveSounds.loop = true
 	//call function to place mushroom
 	setMushroom()
 
@@ -268,6 +279,7 @@ const endLevel = () => {
 		squares[i].removeEventListener('mouseenter', findMushroom)
 		squares[i].removeEventListener('click', claimMushroom)
 		squares[i].removeEventListener('mouseenter', findRat)
+		//squares[i].removeEventListener('mouseleave', ratRunAway)
 		squares[i].style.backgroundImage = 'none'
 	}
 	//resets these global variables for the next level to begin
