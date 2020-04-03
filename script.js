@@ -6,7 +6,7 @@ let mushroomNumber = 0
 let ratHorde = []
 let score = 0
 let healthPoints = 10
-let delay = 600
+let delay = 1000
 
 let titleArea = document.getElementById('titleArea')
 
@@ -255,8 +255,8 @@ const setLevel = (e) => {
 	//shows the exit button
 	exitButtonArea.style.display = 'inline-block'
 	//plays cave sounds
-	//caveSounds.play()
-	//caveSounds.loop = true
+	caveSounds.play()
+	caveSounds.loop = true
 	//call function to place mushroom
 	setMushroom()
 
@@ -279,7 +279,6 @@ const endLevel = () => {
 		squares[i].removeEventListener('mouseenter', findMushroom)
 		squares[i].removeEventListener('click', claimMushroom)
 		squares[i].removeEventListener('mouseenter', findRat)
-		//squares[i].removeEventListener('mouseleave', ratRunAway)
 		squares[i].style.backgroundImage = 'none'
 	}
 	//resets these global variables for the next level to begin
