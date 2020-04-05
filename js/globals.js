@@ -1,4 +1,26 @@
 //Global Variables
+
+let titleArea = document.getElementById('titleArea')
+let startButton = document.getElementById('startButton')
+let finishArea = document.getElementById('finishArea')
+let playAgainButton = document.getElementById('playAgainButton')
+let highScoreTable = document.getElementById('highScoreTable')
+let table = document.getElementById('table')
+let statusArea = document.getElementById('statusArea')
+let healthBoard = document.getElementById('health')
+let scoreBoard = document.getElementById('score')
+let continueButtonArea = document.getElementById('contButtonArea')
+let continueButton = document.getElementById('continueButton')
+let exitButtonArea = document.getElementById('exitButtonArea')
+let exitButton = document.getElementById('exitButton')
+let playArea = document.getElementById('playArea')
+let transitionArea = document.getElementById('transitionArea')
+let ratGrowl = document.getElementById('ratGrowl')
+let mushroomSound = document.getElementById('mushroomSound')
+let caveSounds = document.getElementById('caveSounds')
+
+//Game squares
+
 const square0 = document.getElementById('0')
 const square1 = document.getElementById('1')
 const square2 = document.getElementById('2')
@@ -83,6 +105,8 @@ const square80 = document.getElementById('80')
 const square81 = document.getElementById('81')
 const square82 = document.getElementById('82')
 const square83 = document. getElementById('83')
+
+//Squares array
 
 const squares = [
 square0,

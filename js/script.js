@@ -8,42 +8,6 @@ let score = 0
 let healthPoints = 10
 let delay = 800
 
-let titleArea = document.getElementById('titleArea')
-
-let startButton = document.getElementById('startButton')
-
-let finishArea = document.getElementById('finishArea')
-
-let playAgainButton = document.getElementById('playAgainButton')
-
-let highScoreTable = document.getElementById('highScoreTable')
-
-let table = document.getElementById('table')
-
-let statusArea = document.getElementById('statusArea')
-
-let healthBoard = document.getElementById('health')
-
-let scoreBoard = document.getElementById('score')
-
-let continueButtonArea = document.getElementById('contButtonArea')
-
-let continueButton = document.getElementById('continueButton')
-
-let exitButtonArea = document.getElementById('exitButtonArea')
-
-let exitButton = document.getElementById('exitButton')
-
-let playArea = document.getElementById('playArea')
-
-let transitionArea = document.getElementById('transitionArea')
-
-let ratGrowl = document.getElementById('ratGrowl')
-
-let mushroomSound = document.getElementById('mushroomSound')
-
-let caveSounds = document.getElementById('caveSounds')
-
 const retrieveHighScore = () => {
 	//goes into local storage and retrieves scores in string type format
 	let scoreString = localStorage.getItem(LS_NAME)
@@ -129,15 +93,12 @@ const ratAttack = () => {
 
 //function for mousing over rat
 const findRat = (e) => {
-	console.log(e.target)
 	//function to remove the delay on the ratAttack function
 	const ratRunAway = () => {
 		clearTimeout(pause)
 	}
 	//set the image of the rat
 	let pictureNumber = parseInt(e.target.id)
-	console.log(pictureNumber)
-
 		if (pictureNumber % 7 === 0) {
 			e.target.style.backgroundImage = "url('images/Oppossum1.jpg')"
 		}
@@ -153,8 +114,6 @@ const findRat = (e) => {
 		else {
 			e.target.style.backgroundImage = "url('images/Oppossum5.jpg')"
 		}	
-
-	//e.target.style.backgroundImage = "url('Oppossum1.jpg')"
 	//set a timer Id equal to the variable pause
 	let pause = setTimeout(ratAttack, delay)
 	//sets event listener to stop the calling of ratAttack if the player moves the cursor 
@@ -184,7 +143,22 @@ const claimMushroom = () =>{
 //function to set background image to mushroom
 const findMushroom =(e) => {
 	//set the image of a mushroom
-	squares[mushroomNumber].style.backgroundImage = "url('images/mushroom-icon-2-48.png')"
+	let pictureNumber = parseInt(e.target.id)
+		if (pictureNumber % 7 === 0) {
+			e.target.style.backgroundImage = "url('images/mushroom1.jpg')"
+		}
+		else if (pictureNumber % 5 === 0) {
+			e.target.style.backgroundImage = "url('images/mushroom2.jpg')"
+		}
+		else if (pictureNumber % 4 === 0) {
+			e.target.style.backgroundImage = "url('images/mushroom3.jpg')"
+		}
+		else if (pictureNumber % 3 === 0) {
+			e.target.style.backgroundImage = "url('images/mushroom4.jpg')"
+		}
+		else {
+			e.target.style.backgroundImage = "url('images/mushroom5.png')"
+		}	
 }
 
 //randomizer function
@@ -196,11 +170,9 @@ const getRandomInt = (max) => {
 const setMushroom = (e) => {
 	//calls getRandomInt to get a random number, then assigns it to mushroomNumber
 	mushroomNumber = getRandomInt(84)
-	console.log('the mushroom is at ' + mushroomNumber)
 		//add event listeners
 		squares[mushroomNumber].addEventListener('mouseenter', findMushroom)
 		squares[mushroomNumber].addEventListener('click', claimMushroom)
-
 	//calls function to begin populating the rat horde
 	countRatHorde()
 }
@@ -223,14 +195,12 @@ const countRatHorde = () => {
 const createRats = () => {
 		while(ratHorde.length > 0){
 			rat = ratHorde.pop()
-			console.log('rat at ' + rat)
 			squares[rat].removeEventListener('mouseenter', lighten)
 			squares[rat].addEventListener('mouseenter', findRat)
 		}
 		if (delay > 200) {
 			delay = delay - 50
 		}
-		console.log(delay)
 }
 
 //first part of flashlight effect
@@ -252,9 +222,9 @@ const setLevel = (e) => {
 	}
 	//increases turn number
 	turnNumber++
+	//display health points and score
 	healthBoard.textContent = `Health: ${healthPoints}`
 	scoreBoard.textContent = `Score: ${score}`
-	console.log('It is turn number ' + turnNumber)
 	//hides the title area for playing
 	titleArea.style.display = 'none'
 	//shows the status area for playing
@@ -268,7 +238,6 @@ const setLevel = (e) => {
 	caveSounds.loop = true
 	//call function to place the mushroom
 	setMushroom()
-
 }	
 
 //removes all event listeners to conclude the level before starting the next
