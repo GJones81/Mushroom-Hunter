@@ -32,6 +32,11 @@
 	Friday, April 3rd
 	The game was playable by this point with no bugs. Following playertester feedback, I began improving game play by writing code to create a delay in the rats 'attack' function. The length of delay is set by the variable delay. I added code to decrease the delay by 50 milliseconds with each subsequent level. Lastly I found additional images for the rat elements and incorporated them into the game with an else if chain. 
 
+	Ideas for Further Improvement:
+	* Creating movement in the rats within the levels beyond a certain level by changing which squares the event listeners are placed on.
+	* Adding other objects within the game i.e. poisonous mushrooms which take healthpoints, some other animal which would be harmless, squirrels which steal your 
+	mushrooms 
+
 
 	Author:
 	Guy Jones - Developer
