@@ -19,6 +19,7 @@ let ratGrowl = document.getElementById('ratGrowl')
 let mushroomSound = document.getElementById('mushroomSound')
 let caveSounds = document.getElementById('caveSounds')
 
+
 //Game squares
 
 const square0 = document.getElementById('0')

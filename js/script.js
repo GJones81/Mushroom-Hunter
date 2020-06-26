@@ -56,10 +56,11 @@ const updateScore = () => {
 }
 
 const resetGame = () => {
+	console.log('resetGame called')
 	score = 0
 	healthPoints = 10
 	turnNumber = 0 
-	defeatBanner.style.display = 'none'
+	finishArea.style.display = 'none'
 	endLevel()
 }
 
@@ -216,6 +217,7 @@ const darken = (e) => {
 
 //Adds event listeners to set up 'flashlight' effect
 const setLevel = (e) => {
+	console.log('setLevel being called')
 	for (let i = 0; i < squares.length; i++) {
 		squares[i].addEventListener('mouseenter', lighten)
 		squares[i].addEventListener('mouseleave', darken)
@@ -242,6 +244,7 @@ const setLevel = (e) => {
 
 //removes all event listeners to conclude the level before starting the next
 const endLevel = () => {
+	console.log('endLevel called')
 	//shows the playing area
 	playArea.style.display = 'inline-block'
 	//removes the click from the continue button
