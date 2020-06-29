@@ -220,7 +220,9 @@ const darken = (e) => {
 const setLevel = (e) => {
 	for (let i = 0; i < squares.length; i++) {
 		squares[i].addEventListener('mouseenter', lighten)
+		squares[i].addEventListener('touchstart', lighten)
 		squares[i].addEventListener('mouseleave', darken)
+		squares[i].addEventListener('touchend', darken)
 	}
 	//increases turn number
 	turnNumber++

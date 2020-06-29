@@ -67,10 +67,6 @@ ul {
 	padding: 50px 100px 50px 100px;
 }
 
-#startButton {
-	
-}
-
 #finishArea {
 	display: none;
 	height: 100vh;
@@ -84,10 +80,6 @@ ul {
 	background-color: rgba(138, 138, 144, 0.5);
 	padding: 20px 0px 0px 0px;
 	margin: 20px 0px 0px 0px
-}
-
-#playAgainButton {
-	
 }
 
 #statusArea{
@@ -107,10 +99,6 @@ ul {
 
 #contButtonArea {
 	display: none;
-}
-
-#continueButton {
-	
 }
 
 table {
@@ -142,10 +130,6 @@ td {
 
 #exitButtonArea {
 	display: none;
-
-}
-
-#exitButton {
 
 }
 
